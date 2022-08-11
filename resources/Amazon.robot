@@ -1,10 +1,12 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  PO/LandingPage.robot
 
 *** Keywords ***
 Search for Products
-    Go To  http://www.amazon.com
-    Wait Until Page Contains  Today's Deals
+    LandingPage.Load
+    LandingPage.Verify Page Loaded
+
     Input Text  id=twotabsearchtextbox  Ferrari 458
     Click Button  xpath=//*[@id="nav-search-submit-button"]
     Wait Until Page Contains  results for "Ferrari 458"
