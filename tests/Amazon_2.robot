@@ -14,6 +14,9 @@ Test Teardown  End Web Test
 Suite Teardown  Cleanup Testing Data
 
 *** Variables ***
+${BROWSER} =  chrome
+${START_URL} =  http://www.amazon.com
+${SEARCH_TERM} =  Ferrari 458
 
 *** Test Cases ***
 User can search for products

@@ -1,49 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.9 on darwin)" generated="20220810 14:58:38.587" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo" source="/Users/nguyenvanbao/Desktop/Ascend_Tech/Github/Study/PythonProject/tests/demo.robot">
-<test id="s1-t1" name="Test case 1" line="6">
-<kw name="Do Something">
+<robot generator="Robot 5.0.1 (Python 3.8.9 on darwin)" generated="20220811 15:26:20.750" rpa="false" schemaversion="3">
+<suite id="s1" name="Scope" source="/Users/nguyenvanbao/Desktop/Ascend_Tech/Github/Study/PythonProject/tests/Scope.robot">
+<test id="s1-t1" name="Create and log a variable" line="8">
+<kw name="Set Variable" library="BuiltIn">
+<var>${my_variable}</var>
+<arg>Some information</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220811 15:26:20.780" level="INFO">${my_variable} = Some information</msg>
+<status status="PASS" starttime="20220811 15:26:20.780" endtime="20220811 15:26:20.780"/>
+</kw>
 <kw name="Log" library="BuiltIn">
-<arg>I am doing something...</arg>
+<arg>${my_variable}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220810 14:58:38.615" level="INFO">I am doing something...</msg>
-<status status="PASS" starttime="20220810 14:58:38.615" endtime="20220810 14:58:38.615"/>
+<msg timestamp="20220811 15:26:20.781" level="INFO">Some information</msg>
+<status status="PASS" starttime="20220811 15:26:20.781" endtime="20220811 15:26:20.781"/>
 </kw>
-<status status="PASS" starttime="20220810 14:58:38.614" endtime="20220810 14:58:38.615"/>
-</kw>
-<kw name="Do Something Else">
-<kw name="Log" library="BuiltIn">
-<arg>I am doing something else...</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220810 14:58:38.615" level="INFO">I am doing something else...</msg>
-<status status="PASS" starttime="20220810 14:58:38.615" endtime="20220810 14:58:38.616"/>
-</kw>
-<status status="PASS" starttime="20220810 14:58:38.615" endtime="20220810 14:58:38.616"/>
-</kw>
-<status status="PASS" starttime="20220810 14:58:38.613" endtime="20220810 14:58:38.616"/>
+<status status="PASS" starttime="20220811 15:26:20.779" endtime="20220811 15:26:20.781"/>
 </test>
-<test id="s1-t2" name="Test case 2" line="10">
-<kw name="Do Another Thing">
+<test id="s1-t2" name="Access a variable" line="12">
 <kw name="Log" library="BuiltIn">
-<arg>I am doing another something...</arg>
+<arg>${GLOBAL_VARIABLE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220810 14:58:38.617" level="INFO">I am doing another something...</msg>
-<status status="PASS" starttime="20220810 14:58:38.617" endtime="20220810 14:58:38.617"/>
+<msg timestamp="20220811 15:26:20.782" level="INFO">This is global variable</msg>
+<status status="PASS" starttime="20220811 15:26:20.782" endtime="20220811 15:26:20.782"/>
 </kw>
-<status status="PASS" starttime="20220810 14:58:38.616" endtime="20220810 14:58:38.617"/>
-</kw>
-<kw name="Do Something Else">
-<kw name="Log" library="BuiltIn">
-<arg>I am doing something else...</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220810 14:58:38.617" level="INFO">I am doing something else...</msg>
-<status status="PASS" starttime="20220810 14:58:38.617" endtime="20220810 14:58:38.618"/>
-</kw>
-<status status="PASS" starttime="20220810 14:58:38.617" endtime="20220810 14:58:38.618"/>
-</kw>
-<status status="PASS" starttime="20220810 14:58:38.616" endtime="20220810 14:58:38.618"/>
+<status status="PASS" starttime="20220811 15:26:20.781" endtime="20220811 15:26:20.782"/>
 </test>
-<status status="PASS" starttime="20220810 14:58:38.589" endtime="20220810 14:58:38.618"/>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" starttime="20220811 15:26:20.752" endtime="20220811 15:26:20.783"/>
 </suite>
 <statistics>
 <total>
@@ -52,7 +36,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Scope">Scope</stat>
 </suite>
 </statistics>
 <errors>
