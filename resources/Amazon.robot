@@ -1,6 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  PO/Cart.robot
 Resource  PO/LandingPage.robot
+Resource  PO/Product.robot
+Resource  PO/SearchResults.robot
+Resource  PO/SignIn.robot
+Resource  PO/TopNav.robot
 
 *** Keywords ***
 user is not logged in
@@ -8,18 +13,18 @@ user is not logged in
 
 Search for Products
     LandingPage.Load
+    LandingPage.Verify Page Loaded
     TopNav.Search for Products
-
-search results contains relevant products
     SearchResults.Verify Search Completed
 
-
-user selects a product from search results
-
-
+Select Product from Search Results
+    SearchResults.Click Product link
+    Product.Verify Page Loaded
 
 Add Product to Card
-
-
+    Product.Add to Cart
+    Cart.Verify Product Added
 
 Begin Checkout
+    Cart.Proceed to Checkout
+    SignIn.Verify Page Loaded

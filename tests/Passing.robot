@@ -9,10 +9,18 @@ ${GLOBAL_VARIABLE} =  From script file
 
 *** Test Cases ***
 User can search for products
-    Begin Web Test  http://www.amazon.com  chrome
+    ${url_and_browser} =  Set variable  http://www.amazon.com  chrome
+#    Begin Web Test  http://www.amazon.com  chrome
+    Begin Web Test  ${url_and_browser}
 
 *** Keywords ***
+#Begin Web Test
+#    [Arguments]  ${url}  ${browser}
+#    Open Browser  ${url}  ${browser}
+#    Close Browser
+
 Begin Web Test
-    [Arguments]  ${url}  ${browser}
-    Open Browser  ${url}  ${browser}
+    # why do not use @ here ?
+    [Arguments]  ${url_and_browser}
+    Open Browser  ${url_and_browser}[0]  ${url_and_browser}[1]
     Close Browser
